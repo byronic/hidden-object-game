@@ -4,5 +4,5 @@ In which a user attempts to find a hidden object in a room full of ... well ... 
 
 Usually there is funny dialogue when the user mouses over various elements of the room (or clicks them).
 
-contrib: Spencer Stantis
+contrib: Spencer "The Yellow Dart" Stantis
 contrib: Byron L Lagrone
