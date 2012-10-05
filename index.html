@@ -7,6 +7,25 @@
 
 /// TODO: Write some Javascrip'.
 
+function showObjectText(objectID)
+{
+switch(objectID)
+{
+
+case -99: // the HUD text area itself
+	document.getElementById('HUD_text').innerHTML="Mouse over an object to see its description..."; break;
+
+case 0: 
+	document.getElementById('HUD_text').innerHTML="Moused over Object 0."; break;
+
+case 1: 
+	document.getElementById('HUD_text').innerHTML = "Moused over Object 1."; break;
+
+default: 
+	document.getElementById('HUD_text').innerHTML = "You're not sure what this is supposed to be, exactly."; break;
+}
+}
+
 </script>
 
 </head>
@@ -16,7 +35,11 @@
 
 <!-- OMG HIDEN OBJECTS -->
 
-<p> I am a Hidden Object... but will you ever get the chance to click me? </p>
+<p onmouseover="showObjectText(0)"> I am a Hidden Object... but will you ever get the chance to click me? </p>
+<p onmouseover="showObjectText(1)">I'm a different object...</p>
+<p onmouseover="showObjectText(-98)">I'm an object with an invalid ID number in my function call...</p>
+<br /><br /><br />
+<p onmouseover="showObjectText(-99)" id="HUD_text">HUD text appears here as you mouse-over objects...</p>
 
 </div><!--/shell-->
 </body>
