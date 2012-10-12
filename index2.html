@@ -10,7 +10,10 @@
 ///   prints the result in the HUD_text div.
 function showCoordinates()
 {
-	document.getElementById('HUD_text').innerHTML = 'X=' + window.event.clientX +  ' Y=' + window.event.clientY,10,50;
+	// recalculate the offset of the canvas origin from the browser origin
+	var xOff = document.getElementById('myCanvas').offsetLeft;
+	var yOff = document.getElementById('myCanvas').offsetTop;
+	document.getElementById('HUD_text').innerHTML = 'X=' + (window.event.clientX - xOff) + ' Y=' + (window.event.clientY - yOff);
 }
 
 function init()
@@ -37,13 +40,15 @@ function init()
 
 <canvas onmousemove="showCoordinates()" id="myCanvas" width="640" height="480" style="border:2px solid #FF0000;"></canvas>
 
+
+
+<div id="HUD_text">Mouseover text goes here...</div>
+
 <script type="text/javascript">
 
 init();
 
 </script>
-
-<div id="HUD_text">Mouseover text goes here...</div>
 
 </div><!--/shell-->
 </body>
