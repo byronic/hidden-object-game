@@ -13,7 +13,12 @@ function showCoordinates()
 	// recalculate the offset of the canvas origin from the browser origin
 	var xOff = document.getElementById('myCanvas').offsetLeft;
 	var yOff = document.getElementById('myCanvas').offsetTop;
-	document.getElementById('HUD_text').innerHTML = 'X=' + (window.event.clientX - xOff) + ' Y=' + (window.event.clientY - yOff);
+	var mouseRelativeX = window.event.clientX - xOff;
+	var mouseRelativeY = window.event.clientY - yOff;
+	if((mouseRelativeX > 426) && (mouseRelativeX < 460) && (mouseRelativeY > 334) && (mouseRelativeY < 401))
+		document.getElementById('HUD_text').innerHTML = "A hidden object, sneakily disguised...";
+	else
+		document.getElementById('HUD_text').innerHTML = "Just some freakin' polar bears, man.";
 }
 
 function init()
